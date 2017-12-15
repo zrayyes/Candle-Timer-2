@@ -2,15 +2,13 @@ import React from 'react';
 
 export const TimerItem = ({est,minute}) => {
 
-    let minutes,seconds
+    let minutes,seconds;
 
     (() => {
         let time = est.split(":");
-        let minutesGone = (time[0] - 9) * 60 + time[1];
-        let sc = time[2];
-        minutes = minutesGone%minute;
-        seconds = 60-sc;
-    })()
+        minutes = ((time[0] - 9) * 60 + time[1])%minute;
+        seconds = 60-time[2];
+    })();
 
 
     return (
@@ -23,3 +21,6 @@ export const TimerItem = ({est,minute}) => {
         </div>
     )
 }
+
+// TODO: Detect final minute
+// TODO: Vibrate/Make sound for final minute

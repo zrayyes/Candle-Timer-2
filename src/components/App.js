@@ -9,13 +9,13 @@ class App extends Component {
     super(props);
     this.state = {
         est: '00:00:00',
-        minutes: [1,3,5]
+        minutes: [1]
     };
   }
   
   startTimer(){
     this.timerId = setInterval(()=>{
-      this.setState({est: moment().format('HH:mm:ss')})
+      this.setState({est: moment().utcOffset(-5).format('HH:mm:ss')});
     }, 1000);
   }
 
