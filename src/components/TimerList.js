@@ -2,8 +2,18 @@ import React from 'react';
 import {TimerItem} from "./TimerItem";
 
 
-export const TimerList = () => (
+export const TimerList = ({utc, minutes}) => {
+    const items = minutes.map((minute) => {
+        return (
+            <TimerItem
+                utc={utc}
+                minute={minute}
+            />
+        );
+    });
+
+    return (
     <ul>
-        <TimerItem/>
-    </ul>
-)
+        {items}
+    </ul>)
+}

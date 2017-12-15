@@ -7,7 +7,8 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-        utc: '00:00:00'
+        utc: '00:00:00',
+        minutes: [3,5]
     };
   }
   
@@ -24,7 +25,7 @@ class App extends Component {
         <h1 className="text-center">
           {this.state.utc}
         </h1>
-        <TimerList/>
+        <TimerList utc={this.state.utc} minutes={this.state.minutes}/>
       </div>
     );
   }
