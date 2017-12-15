@@ -10,6 +10,9 @@ export const TimerItem = ({est,minute}) => {
         seconds = 60-time[2];
     })();
 
+    let vibrate = ()=>{
+        navigator.vibrate([300,300,300]);
+    }
 
     return (
         <div>
@@ -17,6 +20,7 @@ export const TimerItem = ({est,minute}) => {
                  "list-group-item list-group-item-success" : 
                  "list-group-item list-group-item-danger"}>
                 {minute} | {minutes}:{seconds}
+                <button onClick={vibrate}>Click</button>
             </li>
         </div>
     )
