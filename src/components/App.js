@@ -9,7 +9,7 @@ class App extends Component {
     super(props);
     this.state = {
         est: '00:00:00',
-        minutes: [1,3,5,30,60]
+        minutes: [1,3,5]
     };
   }
   

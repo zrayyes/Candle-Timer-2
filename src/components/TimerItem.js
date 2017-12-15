@@ -9,8 +9,10 @@ export const TimerItem = ({est,minute}) => {
         return ((minutesGone%minute)+":"+(60-seconds));
     }
 
+    let minutes,seconds = calculateDiff();
+
     return (
         <div>
-            <li>{minute} : {calculateDiff()}</li>
+            <li>{minute} | {minutes}:{seconds}</li>
         </div>
 )}
