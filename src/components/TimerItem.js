@@ -15,10 +15,11 @@ export const TimerItem = ({est,minute}) => {
 
     return (
         <div>
-            <li>{minute} |
-                <span className={(minutes > 0) ? "green" : "red"}>
-                    {minutes}:{seconds}
-                </span> 
+            <li className={(minutes > 0) ?
+                 "list-group-item list-group-item-success" : 
+                 "list-group-item list-group-item-danger"}>
+                {minute} | {minutes}:{seconds}
             </li>
         </div>
-)}
+    )
+}

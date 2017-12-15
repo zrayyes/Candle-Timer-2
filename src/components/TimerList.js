@@ -14,7 +14,7 @@ export const TimerList = ({est, minutes}) => {
     });
 
     return (
-    <ul>
+    <ul className="list-group">
         {items}
     </ul>)
 }
