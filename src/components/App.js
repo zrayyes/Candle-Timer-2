@@ -1,6 +1,7 @@
 import React,{ Component } from 'react';
 import {TimerList} from "./TimerList";
 import moment from "moment";
+import C from "../constants";
 
 // moment().utcOffset(-5).format('HH:mm:ss')
 
@@ -26,7 +27,9 @@ class App extends Component {
         <h1 className="text-center">
           {this.state.est}
         </h1>
-        <TimerList est={this.state.est} minutes={this.state.minutes}/>
+        <TimerList 
+        est={this.state.est} 
+        minutes={this.state.minutes}/>
       </div>
     );
   }

@@ -1,4 +1,5 @@
 import React from 'react';
+import C from "../constants";
 
 export const TimerItem = ({est,minute}) => {
 
