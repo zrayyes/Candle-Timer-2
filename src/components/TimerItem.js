@@ -1,30 +1,35 @@
-import React from 'react';
+import React, { Component } from 'react';
 import C from "../constants";
 
-export const TimerItem = ({est,minute}) => {
 
-    let minutes,seconds;
+export default class TimerItem extends Component {
 
-    (() => {
-        let time = est.split(":");
-        minutes = ((time[0] - 9) * 60 + time[1])%minute;
-        seconds = 60-time[2];
-    })();
+    seconds;
+    minutes;
 
-    let vibrate = ()=>{
+    doMath() {
+        let time = this.props.est.split(":");
+        this.minutes = ((time[0] - 9) * 60 + time[1])%this.props.minute;
+        this.seconds = 60-time[2];
+    };
+
+    vibrate(){
         navigator.vibrate([300,300,300]);
     }
     
-    return (
-        <div>
-            <li className={(minutes > 0) ?
-                 "list-group-item list-group-item-success" : 
-                 "list-group-item list-group-item-danger"}>
-                {minute} | {minutes}:{seconds}
-                <button onClick={vibrate}>Click</button>
-            </li>
-        </div>
-    )
+    render() {
+        this.doMath();
+        return (
+            <div>
+                <li className={(this.minutes > 0) ?
+                    "list-group-item list-group-item-success" : 
+                    "list-group-item list-group-item-danger"}>
+                    {this.props.minute} | {this.minutes}:{this.seconds}
+                    <button onClick={this.vibrate}>Click</button>
+                </li>
+            </div>
+        );
+    }
 }
 
 // TODO: Detect final minute

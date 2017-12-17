@@ -6,8 +6,6 @@ import C from "../constants";
 import TimerList from "./TimerList";
 
 
-// moment().utcOffset(-5).format('HH:mm:ss')
-
 class App extends Component {
 
   render() {

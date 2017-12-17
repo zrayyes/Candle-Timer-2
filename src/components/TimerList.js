@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import {TimerItem} from "./TimerItem";
 import {connect} from "react-redux";
 
 import C from "../constants";
+
+import TimerItem from "./TimerItem";
+
 
 class TimerList extends Component {
     render() {
@@ -10,11 +12,10 @@ class TimerList extends Component {
             <ul className="list-group">
                 {this.props.minutes.map((minute) => {
                     return (
-                        <TimerItem
-                            est={this.props.est}
-                            minute={minute}
-                            key={minute}
-                        />
+                        <TimerItem 
+                        minute={minute}
+                        est={this.props.est}
+                        key={minute}/>
                     );
                 })}
             </ul>
