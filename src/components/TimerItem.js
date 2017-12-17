@@ -14,7 +14,7 @@ export const TimerItem = ({est,minute}) => {
     let vibrate = ()=>{
         navigator.vibrate([300,300,300]);
     }
-
+    
     return (
         <div>
             <li className={(minutes > 0) ?

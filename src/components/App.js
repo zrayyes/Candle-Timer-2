@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 
 import C from "../constants";
 
-import {TimerList} from "./TimerList";
+import TimerList from "./TimerList";
 
 
 // moment().utcOffset(-5).format('HH:mm:ss')
@@ -14,9 +14,7 @@ class App extends Component {
     return (
       <div className="container">
         <h1>{this.props.est}</h1>
-        {/* <TimerList 
-        est={this.state.est} 
-        minutes={this.state.minutes}/> */}
+        <TimerList />
       </div>
     );
   }
