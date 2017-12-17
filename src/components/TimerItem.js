@@ -13,21 +13,21 @@ class TimerItem extends Component {
         seconds = 60-time[2];
     };
 
-    vibrate(){
-        if(this.props.vibrate){
-            navigator.vibrate([300]);
+    notify(){
+        if(this.props.vibrate && ((minutes === 0) && (seconds === 59))){
+            navigator.vibrate(500);
         }
     }
     
     render() {
         this.doMath();
+        this.notify();
         return (
             <div>
                 <li className={(minutes > 0) ?
                     "list-group-item list-group-item-success" : 
                     "list-group-item list-group-item-danger"}>
                     {this.props.minute} | {minutes}:{seconds}
-                    <button onClick={this.vibrate.bind(this)}>Click</button>
                 </li>
             </div>
         );
