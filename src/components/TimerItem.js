@@ -14,10 +14,9 @@ class TimerItem extends Component {
     };
 
     vibrate(){
-        console.log(this);
-        // if(this.props.vibrate){
-        //     navigator.vibrate([300,300,300]);
-        // }
+        if(this.props.vibrate){
+            navigator.vibrate([300]);
+        }
     }
     
     render() {
@@ -28,7 +27,7 @@ class TimerItem extends Component {
                     "list-group-item list-group-item-success" : 
                     "list-group-item list-group-item-danger"}>
                     {this.props.minute} | {minutes}:{seconds}
-                    <button onClick={this.vibrate}>Click</button>
+                    <button onClick={this.vibrate.bind(this)}>Click</button>
                 </li>
             </div>
         );
