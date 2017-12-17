@@ -14,7 +14,6 @@ class TimerList extends Component {
                     return (
                         <TimerItem 
                         minute={minute}
-                        est={this.props.est}
                         key={minute}/>
                     );
                 })}
@@ -25,8 +24,7 @@ class TimerList extends Component {
 
 function mapStateToProps(state){
     return {
-        minutes: state.timers,
-        est: state.est
+        minutes: state.timers
     };
   }
   
