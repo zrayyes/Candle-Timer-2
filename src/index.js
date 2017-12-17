@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {createStore} from "redux";
 import moment from "moment";
-
+import {Provider} from "react-redux";
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './stylesheets/index.css';
@@ -11,8 +11,9 @@ import registerServiceWorker from './registerServiceWorker';
 
 import C from "./constants";
 import appReducer from "./store/reducers";
+import initialState from "./assets/initialState.json";
 
-const store = createStore(appReducer);
+const store = createStore(appReducer,initialState);
 
 (() => {
     setInterval(()=>{
@@ -23,5 +24,9 @@ const store = createStore(appReducer);
     }, 1000);
 })();
 
-ReactDOM.render(<App store={store}/>, document.getElementById('root'));
+ReactDOM.render(
+  <Provider store={store}>
+    <App/>
+  </Provider>, 
+document.getElementById('root'));
 registerServiceWorker();
