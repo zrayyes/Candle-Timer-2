@@ -15,6 +15,7 @@ import initialState from "./assets/initialState.json";
 
 const store = createStore(appReducer,initialState);
 
+// Get EST time every second
 (() => {
     setInterval(()=>{
       store.dispatch({

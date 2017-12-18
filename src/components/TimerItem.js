@@ -7,12 +7,14 @@ let seconds = 0;
 
 class TimerItem extends Component {
 
+    // Calculate time untill next candle
     doMath() {
         let time = this.props.est.split(":");
         minutes = this.props.minute - (((time[0] - 9) * 60 + (time[1] - 30))%(this.props.minute)) - 1;
         seconds = 60-time[2];
     };
 
+    // Play a sound or vibrate when reaching the final minute in a timer
     notify(){
         if(this.props.vibrate && ((minutes === 0) && (seconds === 59))){
             navigator.vibrate(500);
