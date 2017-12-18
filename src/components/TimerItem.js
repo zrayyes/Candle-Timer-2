@@ -45,6 +45,3 @@ function mapStateToProps(state){
   }
   
 export default connect(mapStateToProps)(TimerItem);
-
-// TODO: Detect final minute
-// TODO: Vibrate/Make sound for final minute
