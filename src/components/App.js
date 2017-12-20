@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import C from "../constants";
 
 import TimerList from "./TimerList";
+import Settings from "./Settings";
 
 
 class App extends Component {
@@ -11,6 +12,7 @@ class App extends Component {
     return (
       <div className="container">
         <h1>{this.props.est}</h1>
+        <Settings/>
         <TimerList />
       </div>
     );
