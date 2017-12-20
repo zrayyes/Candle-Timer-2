@@ -1,6 +1,12 @@
 {
     "timers": [1,3,5],
     "est": "00:00:00",
-    "vibrate": true,
-    "sound": true
+    "vibrate": {
+        "enabled": true,
+        "duration": 300
+    },
+    "sound": {
+        "enabled": true,
+        "volume": 75
+    }
 }
