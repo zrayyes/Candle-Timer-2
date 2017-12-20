@@ -20,8 +20,8 @@ const store = createStore(appReducer,initialState);
     setInterval(()=>{
       store.dispatch({
         type: C.SET_EST,
-        payload: moment().format('HH:mm:ss')
-        // payload: moment().utcOffset(-5).format('HH:mm:ss')
+        // payload: moment().format('HH:mm:ss')
+        payload: moment().utcOffset(-5).format('HH:mm:ss')
       })
     }, 1000);
 })();

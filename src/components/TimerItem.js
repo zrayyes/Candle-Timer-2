@@ -16,8 +16,8 @@ class TimerItem extends Component {
 
     // Play a sound or vibrate when reaching the final minute in a timer
     notify(){
-        if(this.props.vibrate && ((minutes === 0) && (seconds === 59))){
-            navigator.vibrate(500);
+        if(this.props.vibrate.enabled && ((minutes === 0) && (seconds === 59))){
+            navigator.vibrate(this.props.vibrate.duration);
         }
     }
     
