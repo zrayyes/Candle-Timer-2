@@ -7,9 +7,10 @@ export default class Settings extends Component {
     render(){
         return (
             <div id="settings">
-                <p>SETTINGS</p>
-                <p>SETTINGS</p>
-                <p>SETTINGS</p>                
+            <h3>Settings</h3>
+                <div class="form-group">
+                    <input type="number" className="form-control" placeholder="Enter New Timer"/>
+                </div>          
             </div>
         );
     }

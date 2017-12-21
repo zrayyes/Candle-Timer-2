@@ -6,13 +6,20 @@ import C from "../constants";
 import TimerList from "./TimerList";
 import Settings from "./Settings";
 
+// TODO: Add row with cols
 
 class App extends Component {
   render() {
     return (
       <div className="container">
-        <h1>{this.props.est}</h1>
-        <Settings/>
+        <div className="row">
+          <div className="col-sm-10">
+            <h1>{this.props.est}</h1>     
+          </div>
+          <div className="col-sm-2">
+            <Settings/>
+          </div>
+        </div>
         <TimerList />
       </div>
     );

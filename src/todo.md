@@ -8,3 +8,4 @@
 - Add CSS (Grey background, sinking dark text)
 - Offline Support
 - Special 1 Hour timer (closes at top of the hour)
+- Add button to hide settings on phones
