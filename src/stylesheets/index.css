@@ -2,6 +2,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-color: #666666;
+  color: lightgoldenrodyellow;
 }
 
 .red {
@@ -10,4 +12,13 @@ body {
 
 .green {
   color: green;
+}
+
+h1{
+  text-align: center;
+  font-size: 5em;
+}
+
+.list-group-item {
+  border-color: #666;
 }

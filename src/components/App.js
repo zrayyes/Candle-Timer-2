@@ -12,11 +12,11 @@ class App extends Component {
   render() {
     return (
       <div className="container">
+        <h1>{this.props.est}</h1>   
         <div className="row">
-          <div className="col-sm-10">
-            <h1>{this.props.est}</h1>     
+          <div className="col-sm-8">  
           </div>
-          <div className="col-sm-2">
+          <div className="col-sm-4">
             <Settings/>
           </div>
         </div>
