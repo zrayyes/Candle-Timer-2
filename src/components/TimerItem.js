@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import C from "../constants";
 import {connect} from "react-redux";
 
-let minutes = 0;
+let minute = 0;
 let seconds = 0;
 
 class TimerItem extends Component {
@@ -18,15 +18,15 @@ class TimerItem extends Component {
             hourStart = 10;
             minuteStart = 0;
         }
-        
+
         let time = this.props.est.split(":");
-        minutes = this.props.minute - (((time[0] - hourStart) * 60 + (time[1] - minuteStart))%(this.props.minute)) - 1;
+        minute = this.props.minute - (((time[0] - hourStart) * 60 + (time[1] - minuteStart))%(this.props.minute)) - 1;
         seconds = 60-time[2];
     };
 
     // Play a sound or vibrate when reaching the final minute in a timer
     notify(){
-        if(this.props.vibrate.enabled && ((minutes === 0) && (seconds === 59))){
+        if(this.props.vibrate.enabled && ((minute === 0) && (seconds === 59))){
             navigator.vibrate(this.props.vibrate.duration);
         }
     }
@@ -36,10 +36,13 @@ class TimerItem extends Component {
         this.notify();
         return (
             <div>
-                <li className={(minutes > 0) ?
-                    "list-group-item list-group-item-success" : 
-                    "list-group-item list-group-item-danger"}>
-                    {this.props.minute} | {minutes}:{seconds}
+                {/* Check if last or first minute */}
+                <li className={(minute === 0) ?
+                    "list-group-item list-group-item-danger" :
+                    (minute === (this.props.minute - 1)) ? 
+                    "list-group-item list-group-item-success" :  
+                    "list-group-item list-group-item-warning"}>
+                    {this.props.minute} | {minute}:{seconds}
                 </li>
             </div>
         );
