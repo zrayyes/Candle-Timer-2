@@ -20,6 +20,7 @@ class App extends Component {
             <Settings/>
           </div>
         </div>
+        <br/>
         <TimerList />
       </div>
     );

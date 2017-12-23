@@ -9,8 +9,18 @@ class TimerItem extends Component {
 
     // Calculate time untill next candle
     doMath() {
+        // Start at 9:30
+        let hourStart = 9;
+        let minuteStart = 30;
+        
+        // Check if it's the 60 minute timer and start at 10:00
+        if (this.props.minute === 60){
+            hourStart = 10;
+            minuteStart = 0;
+        }
+        
         let time = this.props.est.split(":");
-        minutes = this.props.minute - (((time[0] - 9) * 60 + (time[1] - 30))%(this.props.minute)) - 1;
+        minutes = this.props.minute - (((time[0] - hourStart) * 60 + (time[1] - minuteStart))%(this.props.minute)) - 1;
         seconds = 60-time[2];
     };
 
