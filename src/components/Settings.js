@@ -13,6 +13,7 @@ export default class Settings extends Component {
     }
 
     handleChange(event) {
+        console.log(event.target.value);
         this.setState({value: event.target.value});
     }
 
@@ -32,6 +33,25 @@ export default class Settings extends Component {
                         placeholder="Enter New Timer"
                         onChange={this.handleChange}/>
                     </div>
+                    <div className="form-group">
+                    <label for="vibrate">Vibrate durations:</label>
+                        <input type="range" 
+                        min="0"
+                        max="1000" 
+                        className="slider" 
+                        id="vibrate" 
+                        onChange={this.handleChange}/>
+                    </div>
+                    <div className="form-group">
+                        <label for="volume">Volume:</label>
+                        <input type="range" 
+                        min="0"
+                        max="100" 
+                        className="slider" 
+                        id="volume" 
+                        onChange={this.handleChange}/>
+                    </div>
+                    
                     <button type="submit" value="" className="btn btn-primary">Save</button>
                 </form>        
             </div>
