@@ -33,26 +33,28 @@ export default class Settings extends Component {
                         placeholder="Enter New Timer"
                         onChange={this.handleChange}/>
                     </div>
-                    <div className="form-group">
-                    <label for="vibrate">Vibrate durations:</label>
-                        <input type="range" 
-                        min="0"
-                        max="1000" 
-                        className="slider" 
-                        id="vibrate" 
-                        onChange={this.handleChange}/>
+                    <div class="form-group row">
+                        <label class="col-xs-4">Vibrate:</label>
+                        <div class="col-xs-8">
+                            <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" checked/> Enabled
+                            </label>
+                            </div>
+                        </div>
                     </div>
-                    <div className="form-group">
-                        <label for="volume">Volume:</label>
-                        <input type="range" 
-                        min="0"
-                        max="100" 
-                        className="slider" 
-                        id="volume" 
-                        onChange={this.handleChange}/>
+                    <div class="form-group row">
+                        <label class="col-xs-4">Sound:</label>
+                        <div class="col-xs-8">
+                            <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox"/> Enabled
+                            </label>
+                            </div>
+                        </div>
                     </div>
                     
-                    <button type="submit" value="" className="btn btn-primary">Save</button>
+                    <button type="submit" value="" className="btn btn-success">Save</button>
                 </form>        
             </div>
         );
