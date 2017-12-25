@@ -8,3 +8,5 @@
 - Offline Support
 - Add button to hide settings on phones
 - Add proptypes
+- Remove sliders, add radio buttons
+- Change initialState back to Original
