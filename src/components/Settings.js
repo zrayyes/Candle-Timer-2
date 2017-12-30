@@ -26,6 +26,7 @@ export default class Settings extends Component {
         return (
             <div id="settings">
                 <h3>Settings</h3>
+                <p className="red">Don't bother</p>                
                 <form onSubmit={evt => this.handleSubmit(evt)}>
                     <div className="form-group">
                         <input type="number" 
