@@ -35,7 +35,7 @@ class TimerItem extends Component {
         this.doMath();
         this.notify();
         return (
-            <div className="unselectable">
+            <div className="boxy unselectable">
                 {/* Check if last or first minute */}
                 <li className={(minute === 0) ?
                     "list-group-item list-group-item-danger" :

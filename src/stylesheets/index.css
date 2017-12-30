@@ -53,6 +53,10 @@ h1{
   cursor: pointer;
 }
 
+.boxy{
+  width: 10em;
+}
+
 .unselectable {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
