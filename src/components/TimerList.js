@@ -5,19 +5,22 @@ import C from "../constants";
 
 import TimerItem from "./TimerItem";
 
+{/* <ul className="list-group">
+{this.props.minutes.map((minute) => {
+    return (
+        <TimerItem 
+        minute={minute}
+        key={minute}/>
+    );
+})}
+</ul> */}
 
 class TimerList extends Component {
     render() {
         return (
-            <ul className="list-group">
-                {this.props.minutes.map((minute) => {
-                    return (
-                        <TimerItem 
-                        minute={minute}
-                        key={minute}/>
-                    );
-                })}
-            </ul>
+            <div>
+                
+            </div>
         )
     }
 }
