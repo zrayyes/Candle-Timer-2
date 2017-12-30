@@ -6,23 +6,6 @@ import C from "../constants";
 
 import TimerItem from "./TimerItem";
 
-{/* <ul className="list-group">
-{this.props.minutes.map((minute) => {
-    return (
-        <TimerItem 
-        minute={minute}
-        key={minute}/>
-    );
-})}
-</ul> */}
-
-const list = [
-    {content: (<div>test1</div>), classes:['bigger']},
-    {content: (<div>test2</div>)},
-    {content: (<div>test3</div>), classes:['bigger']},
-    {content: (<div>test4</div>)}
-];
-
 class TimerList extends Component {
     render() {
         return (
