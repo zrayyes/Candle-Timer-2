@@ -34,22 +34,22 @@ export default class Settings extends Component {
                         placeholder="Enter New Timer"
                         onChange={this.handleChange}/>
                     </div>
-                    <div class="form-group row">
-                        <label class="col-xs-4">Vibrate:</label>
-                        <div class="col-xs-8">
-                            <div class="form-check">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="checkbox" checked/> Enabled
+                    <div className="form-group row">
+                        <label className="col-xs-4">Vibrate:</label>
+                        <div className="col-xs-8">
+                            <div className="form-check">
+                            <label className="form-check-label">
+                                <input className="form-check-input" type="checkbox" checked/> Enabled
                             </label>
                             </div>
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <label class="col-xs-4">Sound:</label>
-                        <div class="col-xs-8">
-                            <div class="form-check">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="checkbox"/> Enabled
+                    <div className="form-group row">
+                        <label className="col-xs-4">Sound:</label>
+                        <div className="col-xs-8">
+                            <div className="form-check">
+                            <label className="form-check-label">
+                                <input className="form-check-input" type="checkbox"/> Enabled
                             </label>
                             </div>
                         </div>
