@@ -14,14 +14,14 @@ class TimerItem extends Component {
         let hourStart = 9;
         let minuteStart = 30;
         
-        // Check if it's the 60 minute timer and start at 10:00
+        // Check if it's the 60 minute timer and start at 9:00
         if (this.props.minute === 60){
             hourStart = 9;
             minuteStart = 0;
         }
 
         let time = this.props.est.split(":");
-        candleCounter = Math.floor(((time[0] - hourStart) * 60) / this.props.minute) + (time[1] - minuteStart) + 1;
+        candleCounter = Math.floor((((time[0]-hourStart) * 60) + (time[1]-minuteStart)) / this.props.minute) + 1;
         minute = this.props.minute - (((time[0] - hourStart) * 60 + (time[1] - minuteStart))%(this.props.minute)) - 1;
         seconds = 60-time[2];
     };
