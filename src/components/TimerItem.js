@@ -21,7 +21,7 @@ class TimerItem extends Component {
         }
 
         let time = this.props.est.split(":");
-        candleCounter = Math.floor(((time[0] - hourStart) * 60) / this.props.minute) + 1;
+        candleCounter = Math.floor(((time[0] - hourStart) * 60) / this.props.minute) + (time[1] - minuteStart) + 1;
         minute = this.props.minute - (((time[0] - hourStart) * 60 + (time[1] - minuteStart))%(this.props.minute)) - 1;
         seconds = 60-time[2];
     };
