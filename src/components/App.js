@@ -14,11 +14,11 @@ class App extends Component {
       <div className="container">
         <div className="row">
           <div className="col-sm-8">
-            <h1 className="hide">Candle Timer</h1>
+            {/* <h1>Candle Timer</h1> */}
             <h1>EST: {this.props.est}</h1>            
           </div>
           <div className="col-sm-4">
-            <Settings/>
+            {/* <Settings /> */}
           </div>
         </div>
         <br/>
