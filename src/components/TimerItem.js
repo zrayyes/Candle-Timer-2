@@ -44,7 +44,9 @@ class TimerItem extends Component {
                     (minute === (this.props.minute - 1)) ? 
                     "list-group-item list-group-item-success" :  
                     "list-group-item list-group-item-warning"}>
-                    {this.props.minute} | {minute}:{seconds} | {candleCounter}
+                    {(minute > 30) ? 
+                    `${this.props.minute} | ${minute} | ${candleCounter}` :
+                    `${this.props.minute} | ${minute}:${seconds} | ${candleCounter}`}
                 </li>
             </div>
         );
