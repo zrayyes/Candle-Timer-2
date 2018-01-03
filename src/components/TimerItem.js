@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import C from "../constants";
 import {connect} from "react-redux";
 
+let candleCounter = 1;
 let minute = 0;
 let seconds = 0;
 
@@ -15,11 +16,12 @@ class TimerItem extends Component {
         
         // Check if it's the 60 minute timer and start at 10:00
         if (this.props.minute === 60){
-            hourStart = 10;
+            hourStart = 9;
             minuteStart = 0;
         }
 
         let time = this.props.est.split(":");
+        candleCounter = Math.floor(((time[0] - hourStart) * 60) / this.props.minute) + 1;
         minute = this.props.minute - (((time[0] - hourStart) * 60 + (time[1] - minuteStart))%(this.props.minute)) - 1;
         seconds = 60-time[2];
     };
@@ -42,7 +44,7 @@ class TimerItem extends Component {
                     (minute === (this.props.minute - 1)) ? 
                     "list-group-item list-group-item-success" :  
                     "list-group-item list-group-item-warning"}>
-                    {this.props.minute} | {minute}:{seconds}
+                    {this.props.minute} | {minute}:{seconds} | {candleCounter}
                 </li>
             </div>
         );
