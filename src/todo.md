@@ -1,7 +1,6 @@
 # TODO list
 
 - Fix heading on mobile
-- Add elapsed number of candles
 - Add placeholder for dragging
 - Remove seconds if over 30 minutes long
 - Add sound player
