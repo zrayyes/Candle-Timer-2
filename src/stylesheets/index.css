@@ -5,6 +5,9 @@ body {
   background-color: #666666;
   color: lightgoldenrodyellow;
 }
+li {
+  color: black !important; 
+}
 
 .red {
   color: red;
