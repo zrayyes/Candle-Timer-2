@@ -14,7 +14,7 @@ class App extends Component {
       <div className="container">
         <div className="row">
           <div >
-            <h1>Candle Timer</h1>
+            {/* <h1>Candle Timer</h1> */}
             <h1>EST: {this.props.est}</h1>            
           </div>
         </div>
