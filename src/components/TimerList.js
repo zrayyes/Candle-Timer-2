@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {connect} from "react-redux";
 import DragSortableList from 'react-drag-sortable';
 
-import C from "../constants";
+// import C from "../constants";
 
 import TimerItem from "./TimerItem";
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import C from "../constants";
+// import C from "../constants";
 import { connect } from "react-redux";
 
 let candleCounter = 1;

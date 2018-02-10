@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import C from "../constants";
-import {connect} from "react-redux";
+// import C from "../constants";
+// import {connect} from "react-redux";
 
 
 export default class Settings extends Component {

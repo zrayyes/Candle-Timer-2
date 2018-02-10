@@ -1,10 +1,10 @@
 import React,{ Component } from 'react';
 import {connect} from "react-redux";
 
-import C from "../constants";
+// import C from "../constants";
 
 import TimerList from "./TimerList";
-import Settings from "./Settings";
+// import Settings from "./Settings";
 
 // TODO: Add row with cols
 
