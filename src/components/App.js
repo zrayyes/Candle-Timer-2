@@ -13,12 +13,9 @@ class App extends Component {
     return (
       <div className="container">
         <div className="row">
-          <div className="col-sm-8">
+          <div >
             <h1>Candle Timer</h1>
             <h1>EST: {this.props.est}</h1>            
-          </div>
-          <div className="col-sm-4">
-            <Settings />
           </div>
         </div>
         <br/>
