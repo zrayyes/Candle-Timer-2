@@ -13,7 +13,9 @@
     "react-drag-sortable": "^1.0.5",
     "react-redux": "^5.0.6",
     "react-scripts": "1.0.17",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2",
+    "redux-form": "^7.3.0",
+    "redux-form-material-ui": "^4.3.3"
   },
   "scripts": {
     "start": "react-scripts start",
