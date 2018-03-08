@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {createStore} from "redux";
+import { createStore } from "redux";
 import moment from "moment";
-import {Provider} from "react-redux";
+import { Provider } from "react-redux";
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './stylesheets/index.css';
@@ -11,24 +11,30 @@ import registerServiceWorker from './registerServiceWorker';
 
 import C from "./constants";
 import appReducer from "./store/reducers";
-import initialState from "./assets/initialState.json";
+import defaultState from "./assets/initialState.json";
 
-const store = createStore(appReducer,initialState);
+if (!localStorage.getItem('CandleTimerSettigns')) {
+  localStorage.setItem('CandleTimerSettigns', JSON.stringify(defaultState));
+}
+
+const initialState = JSON.parse(localStorage.getItem('CandleTimerSettigns'));
+
+const store = createStore(appReducer, initialState);
 
 // Get EST time every second
 (() => {
-    setInterval(()=>{
-      store.dispatch({
-        type: C.SET_EST,
-        // payload: moment().format('HH:mm:ss')
-        payload: moment().utcOffset(-5).format('HH:mm:ss')
-      })
-    }, 1000);
+  setInterval(() => {
+    store.dispatch({
+      type: C.SET_EST,
+      // payload: moment().format('HH:mm:ss')
+      payload: moment().utcOffset(-5).format('HH:mm:ss')
+    })
+  }, 1000);
 })();
 
 ReactDOM.render(
   <Provider store={store}>
-    <App/>
-  </Provider>, 
-document.getElementById('root'));
+    <App />
+  </Provider>,
+  document.getElementById('root'));
 registerServiceWorker();

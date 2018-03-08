@@ -6,4 +6,3 @@
 - Add working settings
 - Add placeholder for when dragging
 - Add button to hide settings on phones
-- Store settings LocalStorage and check if they exist
