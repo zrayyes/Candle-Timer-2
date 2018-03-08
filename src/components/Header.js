@@ -33,6 +33,8 @@ class Header extends Component {
     );
 }
 
-function mapStateToProps(state) { }
+function mapStateToProps(state) {
+    return {};
+}
 
 export default connect(mapStateToProps)(Header);
