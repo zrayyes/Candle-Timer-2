@@ -22,8 +22,7 @@ class App extends Component {
         <div className="container">
           <div className="row">
             <div >
-              {/* <h1>Candle Timer</h1> */}
-              <h1>EST: {this.props.est}</h1>
+              <h1>EST: 00:XX:00</h1>
             </div>
           </div>
           <br />
@@ -34,10 +33,6 @@ class App extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    est: state.est
-  };
-}
+function mapStateToProps(state) {}
 
 export default connect(mapStateToProps)(App);
