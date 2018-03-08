@@ -8,7 +8,6 @@ class TimerItem extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            time: null,
             candleCounter: 1,
             minute: 0,
             seconds: 0
@@ -40,10 +39,11 @@ class TimerItem extends Component {
         }
 
         let time = moment().utcOffset(-5).format('HH:mm:ss').split(":");
-        this.state.candleCounter = Math.floor((((time[0] - hourStart) * 60) + (time[1] - minuteStart)) / this.props.minute) + 1;
+        let tempCandle = Math.floor((((time[0] - hourStart) * 60) + (time[1] - minuteStart)) / this.props.minute) + 1;
         let tempMinute = this.props.minute - (((time[0] - hourStart) * 60 + (time[1] - minuteStart)) % (this.props.minute)) - 1;
         let tempSeconds = 60 - time[2];
         this.setState({
+            candleCounter: tempCandle,
             minute: tempMinute,
             seconds: tempSeconds
         })
