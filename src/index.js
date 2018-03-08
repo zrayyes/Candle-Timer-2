@@ -11,11 +11,11 @@ import registerServiceWorker from './registerServiceWorker';
 import appReducer from "./store/reducers";
 import defaultState from "./assets/initialState.json";
 
-if (!localStorage.getItem('CandleTimerSettigns')) {
-  localStorage.setItem('CandleTimerSettigns', JSON.stringify(defaultState));
+if (!localStorage.getItem('CandleTimerSettings')) {
+  localStorage.setItem('CandleTimerSettings', JSON.stringify(defaultState));
 }
 
-const initialState = JSON.parse(localStorage.getItem('CandleTimerSettigns'));
+const initialState = JSON.parse(localStorage.getItem('CandleTimerSettings'));
 
 const store = createStore(appReducer, initialState);
 

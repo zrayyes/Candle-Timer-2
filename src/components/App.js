@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import TimerList from "./TimerList";
+import Header from "./Header";
 import { slide as Menu } from 'react-burger-menu'
 
 class App extends Component {
@@ -21,9 +22,7 @@ class App extends Component {
         </Menu>
         <div className="container">
           <div className="row">
-            <div >
-              <h1>EST: 00:XX:00</h1>
-            </div>
+              <Header />
           </div>
           <br />
           <TimerList />
@@ -33,6 +32,6 @@ class App extends Component {
   }
 }
 
-function mapStateToProps(state) {}
+function mapStateToProps(state) { }
 
 export default connect(mapStateToProps)(App);
