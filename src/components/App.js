@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import TimerList from "./TimerList";
 import Header from "./Header";
-import { slide as Menu } from 'react-burger-menu'
+import Sidebar from "./Sidebar";
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 class App extends Component {
 
@@ -11,28 +12,22 @@ class App extends Component {
     console.log('click');
   }
 
-  render() {
-    return (
-      <div>
-        <Menu isOpen={false}>
-          <a id="home" className="menu-item" href="/">Home</a>
-          <a id="about" className="menu-item" href="/about">About</a>
-          <a id="contact" className="menu-item" href="/contact">Contact</a>
-          <a onClick={this.showSettings} className="menu-item--small" href="">Settings</a>
-        </Menu>
-        <div className="container">
-          <div className="row">
-              <Header />
-          </div>
-          <br />
-          <TimerList />
+  render = () => (
+    <MuiThemeProvider>
+      <Sidebar />
+      <div className="container">
+        <div className="row">
+          <Header />
         </div>
+        <br />
+        <TimerList />
       </div>
-    );
-  }
+    </MuiThemeProvider>
+  );
 }
 
-function mapStateToProps(state) { 
+
+function mapStateToProps(state) {
   return {};
 }
 
