@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from "react-redux";
 import { slide as Menu } from 'react-burger-menu';
 import MenuItem from 'material-ui/MenuItem';
 
