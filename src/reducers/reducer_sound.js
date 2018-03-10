@@ -6,6 +6,7 @@ export default function (state = null, action) {
             return action.payload;
         case C.SET_SOUND:
             return action.payload;
+        default:
+            return state;
     }
-    return state;
 }
