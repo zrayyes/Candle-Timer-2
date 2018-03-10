@@ -8,7 +8,7 @@ import './stylesheets/index.css';
 import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
 
-import appReducer from "./store/reducers";
+import appReducer from "./reducers/reducers";
 import defaultState from "./assets/initialState.json";
 
 if (!localStorage.getItem('CandleTimerSettings')) {
