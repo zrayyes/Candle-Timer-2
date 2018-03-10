@@ -13,3 +13,31 @@ export function removeTimer(timer) {
         payload: timer
     }
 }
+
+export function toggleVibrate(state) {
+    return {
+        type: C.TOGGLE_VIBRATE,
+        payload: state
+    }
+}
+
+export function setVibrate(duration) {
+    return {
+        type: C.SET_VIBRATE,
+        payload: duration
+    }
+}
+
+export function toggleSound(state) {
+    return {
+        type: C.TOGGLE_SOUND,
+        payload: state
+    }
+}
+
+export function setSound(volume) {
+    return {
+        type: C.SET_SOUND,
+        payload: volume
+    }
+}
