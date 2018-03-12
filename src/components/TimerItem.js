@@ -38,7 +38,7 @@ class TimerItem extends Component {
             minuteStart = 0;
         }
 
-        let time = moment().utcOffset(-5).format('HH:mm:ss').split(":");
+        let time = moment().utcOffset(-4).format('HH:mm:ss').split(":");
         let tempCandle = Math.floor((((time[0] - hourStart) * 60) + (time[1] - minuteStart)) / this.props.minute) + 1;
         let tempMinute = this.props.minute - (((time[0] - hourStart) * 60 + (time[1] - minuteStart)) % (this.props.minute)) - 1;
         let tempSeconds = 60 - time[2];

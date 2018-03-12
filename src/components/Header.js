@@ -23,7 +23,7 @@ class Header extends Component {
 
     tick() {
         this.setState({
-            time: moment().utcOffset(-5).format('HH:mm:ss')
+            time: moment().utcOffset(-4).format('HH:mm:ss')
         });
     }
     render = () => (
