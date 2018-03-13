@@ -5,3 +5,4 @@
 - Add input to add timers
 - Add working settings
 - Add placeholder for when dragging
+- Add different time zones
