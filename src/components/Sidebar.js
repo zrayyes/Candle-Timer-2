@@ -52,24 +52,27 @@ class Sidebar extends Component {
                 <Button type='submit' basic color='green' fluid>Save</Button>
             </Form>
             <br />
+            <Form.Field>
+                <label>Volume</label>
+                <Slider color="red"
+                    inverted={false}
+                    settings={{
+                        start: this.props.sound.volume,
+                        min: 0,
+                        max: 100,
+                        step: 10,
+                        onChange: (value) => {
+                            this.setState({ isOpen: true });
+                            this.props.setSound(value);
+                        },
+                    }} />
+            </Form.Field>
+            <br />
             <Button basic
                 onClick={e => this.props.resetTimers()}
                 color='yellow'
                 content='Reset Timers'
                 fluid />
-            <br />
-            <Slider color="red"
-                inverted={false}
-                settings={{
-                    start: this.props.sound.volume,
-                    min: 0,
-                    max: 100,
-                    step: 10,
-                    onChange: (value) => {
-                        this.setState({ isOpen: true });
-                        this.props.setSound(value);
-                    },
-                }} />
         </Menu>
     );
 }
