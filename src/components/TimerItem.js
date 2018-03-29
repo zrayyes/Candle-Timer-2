@@ -67,7 +67,7 @@ class TimerItem extends Component {
                 : (this.state.minute === 1)
                     ? "list-group-item list-group-item-orange"
                     : "list-group-item list-group-item-green"}>
-                {(this.state.minute > 30)
+                {(this.state.minute > 10)
                     ? `${this.props.minute} | ${this.state.minute} | ${this.state.candleCounter}`
                     : `${this.props.minute} | ${this.state.minute}:${this.state.seconds} | ${this.state.candleCounter}`}
                 <Icon fitted name='close' onClick={e => this.props.removeTimer(this.props.minute)} />
