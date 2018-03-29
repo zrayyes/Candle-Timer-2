@@ -5,6 +5,7 @@
   "homepage": "http://zrayyes.github.io/Candle-Timer-2/",
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "howler": "^2.0.9",
     "moment": "^2.19.4",
     "react": "^16.2.0",
     "react-burger-menu": "^2.3.0",

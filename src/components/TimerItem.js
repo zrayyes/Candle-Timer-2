@@ -4,7 +4,11 @@ import moment from "moment";
 import { Icon } from 'semantic-ui-react'
 import { removeTimer } from '../actions/actions';
 import { bindActionCreators } from 'redux';
+import { Howl, Howler } from "howler";
 
+const sound = new Howl({
+    src: ['./ding.wav'],
+});
 
 class TimerItem extends Component {
     constructor(props) {
@@ -49,13 +53,16 @@ class TimerItem extends Component {
             minute: tempMinute,
             seconds: tempSeconds
         })
+        this.notify();
     }
 
 
     // Play a sound or vibrate when reaching the final minute in a timer
     notify() {
-        if (this.props.vibrate && ((this.state.minute === 0) && (this.state.seconds === 59))) {
-            navigator.vibrate(300);
+        if (this.props.vibrate.on && ((this.state.minute === 0) && (this.state.seconds === 59))) {
+            Howler.volume(this.props.sound.volume / 100);
+            sound.play();
+            navigator.vibrate(this.props.vibrate.duration);
         }
     }
 
