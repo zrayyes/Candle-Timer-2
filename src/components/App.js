@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import TimerList from "./TimerList";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 class App extends Component {
 
@@ -13,7 +12,7 @@ class App extends Component {
   }
 
   render = () => (
-    <MuiThemeProvider>
+    <div>
       <Sidebar />
       <div className="container">
         <div className="row">
@@ -22,7 +21,7 @@ class App extends Component {
         <br />
         <TimerList />
       </div>
-    </MuiThemeProvider>
+    </div>
   );
 }
 
