@@ -11,19 +11,24 @@ class Sidebar extends Component {
         super(props);
         this.state = {
             newTimer: '',
-            isOpen: false
+            isOpen: false,
+            error: false
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
 
     }
 
-    handleChange = (e, { name, value }) => this.setState({ [name]: value, isOpen: true })
+    handleChange = (e, { name, value }) => this.setState({ [name]: value, isOpen: true, error: false })
 
     handleSubmit = () => {
         const { newTimer } = this.state
-        this.props.addTimer(newTimer);
-        this.setState({ isOpen: false });
+        if (!isNaN(newTimer) && newTimer !== '') {
+            this.props.addTimer(newTimer);
+            this.setState({ isOpen: false });
+        } else {
+            this.setState({ error: true })
+        }
     }
 
 
@@ -37,6 +42,7 @@ class Sidebar extends Component {
                         type={'number'}
                         min={1}
                         fluid
+                        error={this.state.error}
                         name='newTimer'
                         value={this.state.newTimer}
                         onChange={this.handleChange}
@@ -44,6 +50,7 @@ class Sidebar extends Component {
                 </Form.Field>
                 <Button type='submit' basic color='green' fluid>Save</Button>
             </Form>
+            <Button basic color='yellow' content='Yellow' />
         </Menu>
     );
 }

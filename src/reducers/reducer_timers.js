@@ -9,6 +9,8 @@ export default function (state = null, action) {
         case C.REMOVE_TIMER:
             let newState1 = state.filter(timer => timer !== action.payload);
             return newState1;
+        case C.RESET_TIMERS:
+            return state;
         default:
             return state;
     }
