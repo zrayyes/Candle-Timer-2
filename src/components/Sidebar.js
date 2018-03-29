@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { slide as Menu } from 'react-burger-menu';
 import { connect } from "react-redux";
 import { Button, Form } from 'semantic-ui-react'
+import { addTimer, removeTimer } from '../actions/actions';
+import { bindActionCreators } from 'redux';
 
 class Sidebar extends Component {
 
@@ -9,7 +11,7 @@ class Sidebar extends Component {
         super(props);
         this.state = {
             newTimer: '',
-            isOpen: false
+            isOpen: true
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
@@ -20,7 +22,8 @@ class Sidebar extends Component {
 
     handleSubmit = () => {
         const { newTimer } = this.state
-        console.log(newTimer)
+        this.props.addTimer(newTimer);
+        this.setState({ isOpen: false });
     }
 
 
@@ -50,4 +53,8 @@ function mapStateToProps(state) {
     return {};
 }
 
-export default connect(mapStateToProps)(Sidebar);
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({ addTimer, removeTimer }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);
