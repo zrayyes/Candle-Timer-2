@@ -11,7 +11,7 @@ class Sidebar extends Component {
         super(props);
         this.state = {
             newTimer: '',
-            isOpen: true
+            isOpen: false
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);

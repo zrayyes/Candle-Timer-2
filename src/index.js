@@ -20,6 +20,10 @@ const initialState = JSON.parse(localStorage.getItem('CandleTimerSettings'));
 
 const store = createStore(appReducer, initialState);
 
+store.subscribe(() => {
+  localStorage.setItem('CandleTimerSettings', JSON.stringify(store.getState()));
+});
+
 ReactDOM.render(
   <Provider store={store}>
     <App />
