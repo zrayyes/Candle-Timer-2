@@ -5,7 +5,7 @@ export default function (state = null, action) {
         case C.ADD_TIMER:
             let newState = state;
             newState.push(Number(action.payload));
-            return newState;
+            return newState.slice(0).sort((a, b) => { return a - b });
         case C.REMOVE_TIMER:
             return state;
         default:
