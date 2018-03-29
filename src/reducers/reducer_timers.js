@@ -7,7 +7,8 @@ export default function (state = null, action) {
             newState.push(Number(action.payload));
             return newState.slice(0).sort((a, b) => { return a - b });
         case C.REMOVE_TIMER:
-            return state;
+            let newState1 = state.filter(timer => timer !== action.payload);
+            return newState1;
         default:
             return state;
     }

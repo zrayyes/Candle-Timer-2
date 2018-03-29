@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { slide as Menu } from 'react-burger-menu';
 import { connect } from "react-redux";
 import { Button, Form } from 'semantic-ui-react'
-import { addTimer, removeTimer } from '../actions/actions';
+import { addTimer } from '../actions/actions';
 import { bindActionCreators } from 'redux';
 
 class Sidebar extends Component {
@@ -54,7 +54,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({ addTimer, removeTimer }, dispatch);
+    return bindActionCreators({ addTimer }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);

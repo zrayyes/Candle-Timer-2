@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import moment from "moment";
-
+import { Icon } from 'semantic-ui-react'
+import { removeTimer } from '../actions/actions';
+import { bindActionCreators } from 'redux';
 
 
 class TimerItem extends Component {
@@ -68,6 +70,7 @@ class TimerItem extends Component {
                 {(this.state.minute > 30)
                     ? `${this.props.minute} | ${this.state.minute} | ${this.state.candleCounter}`
                     : `${this.props.minute} | ${this.state.minute}:${this.state.seconds} | ${this.state.candleCounter}`}
+                <Icon fitted name='close' onClick={e => this.props.removeTimer(this.props.minute)} />
             </li>
         </div>
     );
@@ -81,4 +84,8 @@ function mapStateToProps(state) {
     };
 }
 
-export default connect(mapStateToProps)(TimerItem);
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({ removeTimer }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(TimerItem);
