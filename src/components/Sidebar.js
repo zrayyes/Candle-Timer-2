@@ -26,7 +26,7 @@ class Sidebar extends Component {
         const { newTimer } = this.state
         if (!isNaN(newTimer) && newTimer !== '') {
             this.props.addTimer(newTimer);
-            this.setState({ isOpen: false });
+            this.setState({ isOpen: false, newTimer: '' });
         } else {
             this.setState({ error: true })
         }
