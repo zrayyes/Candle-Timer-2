@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { slide as Menu } from 'react-burger-menu';
 import { connect } from "react-redux";
 import { Button, Form } from 'semantic-ui-react'
-import { addTimer } from '../actions/actions';
+import { addTimer, resetTimers } from '../actions/actions';
 import { bindActionCreators } from 'redux';
 
 class Sidebar extends Component {
@@ -11,7 +11,7 @@ class Sidebar extends Component {
         super(props);
         this.state = {
             newTimer: '',
-            isOpen: false,
+            isOpen: true,
             error: false
         };
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -50,7 +50,12 @@ class Sidebar extends Component {
                 </Form.Field>
                 <Button type='submit' basic color='green' fluid>Save</Button>
             </Form>
-            <Button basic color='yellow' content='Yellow' />
+            <br />
+            <Button basic
+                onClick={e => this.props.resetTimers()}
+                color='yellow'
+                content='Reset Timers'
+                fluid />
         </Menu>
     );
 }
@@ -61,7 +66,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({ addTimer }, dispatch);
+    return bindActionCreators({ addTimer, resetTimers }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);
