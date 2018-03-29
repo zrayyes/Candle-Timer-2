@@ -29,6 +29,7 @@ class Header extends Component {
     render = () => (
         <div>
             <h1>EST: {this.state.time}</h1>
+            <p>{this.props.sound.volume}</p>
         </div>
     );
 }

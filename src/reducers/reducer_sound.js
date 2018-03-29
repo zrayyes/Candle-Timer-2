@@ -3,9 +3,11 @@ import C from "../constants";
 export default function (state = null, action) {
     switch (action.type) {
         case C.TOGGLE_SOUND:
-            return action.payload;
+            return state;
         case C.SET_SOUND:
-            return action.payload;
+            let newState = state;
+            newState.volume = action.payload;
+            return newState;
         default:
             return state;
     }

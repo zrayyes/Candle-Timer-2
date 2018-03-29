@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { slide as Menu } from 'react-burger-menu';
 import { connect } from "react-redux";
 import { Button, Form } from 'semantic-ui-react'
-import { addTimer, resetTimers } from '../actions/actions';
+import { addTimer, resetTimers, setSound } from '../actions/actions';
 import { bindActionCreators } from 'redux';
+import { Slider } from 'react-semantic-ui-range'
 
 class Sidebar extends Component {
 
@@ -56,17 +57,30 @@ class Sidebar extends Component {
                 color='yellow'
                 content='Reset Timers'
                 fluid />
+            <br />
+            <Slider color="red"
+                inverted={false}
+                settings={{
+                    start: this.props.sound.volume,
+                    min: 0,
+                    max: 100,
+                    step: 10,
+                    onChange: (value) => {
+                        this.setState({ isOpen: true });
+                        this.props.setSound(value);
+                    },
+                }} />
         </Menu>
     );
 }
 
 
 function mapStateToProps(state) {
-    return {};
+    return { sound: state.sound };
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({ addTimer, resetTimers }, dispatch);
+    return bindActionCreators({ addTimer, resetTimers, setSound }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);
