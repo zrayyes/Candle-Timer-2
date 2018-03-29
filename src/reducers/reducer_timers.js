@@ -1,4 +1,5 @@
 import C from "../constants";
+import defaultState from "../assets/initialState.json";
 
 export default function (state = null, action) {
     switch (action.type) {
@@ -10,6 +11,7 @@ export default function (state = null, action) {
             let newState1 = state.filter(timer => timer !== action.payload);
             return newState1;
         case C.RESET_TIMERS:
+            console.log(defaultState);
             return state;
         default:
             return state;

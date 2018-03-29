@@ -14,6 +14,13 @@ export function removeTimer(timer) {
     }
 }
 
+export function resetTimers() {
+    return {
+        type: C.RESET_TIMERS,
+        payload: {}
+    }
+}
+
 export function toggleVibrate(state) {
     return {
         type: C.TOGGLE_VIBRATE,
