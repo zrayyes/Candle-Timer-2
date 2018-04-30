@@ -10,6 +10,8 @@ const sound = new Howl({
     src: ['./ding.wav'],
 });
 
+const selected = [3, 5, 8, 13, 89, 233, 377];
+
 class TimerItem extends Component {
     constructor(props) {
         super(props);
@@ -59,7 +61,7 @@ class TimerItem extends Component {
 
     // Play a sound or vibrate when reaching the final minute in a timer
     notify() {
-        if (this.props.vibrate.on && ((this.state.minute === 0) && (this.state.seconds === 59))) {
+        if (this.props.vibrate.on && ((this.state.minute === 1) && (this.state.seconds === 59)) && selected.includes(this.props.minute)) {
             Howler.volume(this.props.sound.volume / 100);
             sound.play();
             navigator.vibrate(this.props.vibrate.duration);
