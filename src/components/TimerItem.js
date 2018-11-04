@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import moment from "moment";
+import moment from "moment-timezone";
 import { Icon } from 'semantic-ui-react'
 import { removeTimer } from '../actions/actions';
 import { bindActionCreators } from 'redux';
@@ -42,11 +42,10 @@ class TimerItem extends Component {
 
         // Check if it's the 60 minute timer and start at 9:00
         if (this.props.minute === 60) {
-            hourStart = 9;
             minuteStart = 0;
         }
 
-        let time = moment().utcOffset(-4).format('HH:mm:ss').split(":");
+        let time = moment().tz("America/New_York").format('HH:mm:ss').split(":");
         let tempCandle = Math.floor((((time[0] - hourStart) * 60) + (time[1] - minuteStart)) / this.props.minute) + 1;
         let tempMinute = this.props.minute - (((time[0] - hourStart) * 60 + (time[1] - minuteStart)) % (this.props.minute)) - 1;
         let tempSeconds = 60 - time[2];

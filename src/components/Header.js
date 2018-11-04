@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import moment from "moment";
+import moment from "moment-timezone";
 
 class Header extends Component {
     constructor(props) {
@@ -23,7 +23,7 @@ class Header extends Component {
 
     tick() {
         this.setState({
-            time: moment().utcOffset(-4).format('HH:mm:ss')
+            time: moment().tz("America/New_York").format('HH:mm:ss')
         });
     }
     render = () => (
